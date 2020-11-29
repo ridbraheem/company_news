@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <!-- Custom fonts for this template -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+  <!-- Icons -->
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="icon" type="image/png" sizes="32x32" href="images\logo.png">
+  <title><%= HeadT %></title>
+</head>
+
+<body>
+
+  <!-- Image and text -->
+  <nav class="navbar ">
+    <a class="navbar-brand" href="/">
+      <img src="images\logo.png" class="logo">
+      Home | <%= HeadT %> Related Articles
+    </a>
+  </nav>
+
+  <div class="container-fluid">
+    <% nydata.forEach(function(dat){ %>
+    <div class="row NewsGrid">
+      <% if (dat.multimedia[0]  === undefined) { %>
+      <div class="col-md-3">
+        <img src="images\logo.png" alt="" class="rounded">
+      </div>
+      <% } else{ %>
+      <div class="col-md-3">
+        <img src="http://www.nytimes.com/<%=dat.multimedia[0].url%>" alt="" class="rounded">
+      </div>
+      <% } %>
+
+      <div class="col-md-9">
+        <a href="<%= dat.web_url %>">
+          <h4><%= dat.headline.main %> </h4>
+          <p><%= dat.lead_paragraph %> </p>
+          <h6><%= dat.byline.original %> </h6>
+          <h6><%= dat.multimedia.url %> </h6>
+          <p> Published: <%= dat.pub_date.substring(0, 10)%> </p>
+        </a>
+      </div>
+    </div>
+    <% });%>
+  </div>
+  <footer class="footer section">
+    <div class="footer__container bd-grid">
+      <p class="getintouch">Get in Touch</p>
+      <div class="footer__social">
+        <a href="http://linkedin.com/in/ridwanullah-i-170b98b2" class="footer__social"><i class='bx bxl-linkedin'></i></a>
+        <a href="https://github.com/ridbraheem" class="footer__social"><i class='bx bxl-github'></i></a>
+        <a href="mailto:ridwanibraheem1@gmail.com" class="footer__social"><i class='bx bx-envelope'></i></a>
+      </div>
+      <p class="footer__copy">© 2020 Ridwanullah Ibraheem. All rights reserved.</p>
+    </div>
+
+  </footer>
+
+</body>
+
+</html>
