@@ -41,10 +41,10 @@
               </div>
               <div class="form-row">
                 <div class="col">
-                  <input type="text" id="start" name="begin_date" class="form-control" placeholder="Start Date" onfocus="(this.type='date')" onblur="(this.type='text')" required>
+                  <input type="text" id="start" name="begin_date" class="form-control" placeholder="Start Date" onfocus="this.type='date';this.focus();" onblur="if(this.value == '') this.type='text';"required>
                 </div>
                 <div class="col">
-                  <input type="text" id="start" name="end_date" class="form-control" placeholder="End Date" onfocus="(this.type='date')" onblur="(this.type='text')" required>
+                  <input type="text" id="start" name="end_date" class="form-control" placeholder="End Date" onfocus="this.type='date';this.focus();"onblur="if(this.value == '') this.type='text';" required>
                 </div>
               </div>
               <div class="sub">
@@ -67,7 +67,7 @@
       </div>
     </div>
   </div>
-  </div>
+
 
   <div class="social-icons">
     <ul class="list-unstyled text-center mb-0">
@@ -88,3 +88,13 @@
       </li>
     </ul>
   </div>
+  </body>
+  <script>
+
+  var textbox = document.getElementById('start')
+        textbox.onfocus = function (event) {
+            this.type = 'date';
+            this.focus();
+    }
+
+</script>
