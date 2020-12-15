@@ -9,5 +9,6 @@ https://company-news.herokuapp.com/
 Stack:
 
 NodeJs/NY Times API - Backend
+
 HTML/CSS/Javascript - Frontend
 
